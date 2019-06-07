@@ -15,9 +15,8 @@ module.exports = ({
   timeout = 30000,
   ...launchOpts
 } = {}) => {
-  if (launchOpts.stealthMode) {
-    puppeteer.use(require('puppeteer-extra-plugin-stealth')())
-  }
+  puppeteer.use(require('puppeteer-extra-plugin-stealth')())
+
   let browser = puppeteer.launch({
     ignoreHTTPSErrors: true,
     args: [
